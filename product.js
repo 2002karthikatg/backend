@@ -20,7 +20,8 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use("/images", express.static(path.join(__dirname, "../first-app/public/images")));
 app.use(express.static('public'));
-mongoose.connect("mongodb+srv://ba:sLAqxQMpCCjI2Gtf@adinnoutdoors.zpylrw9.mongodb.net/adinnoutdoors")
+// mongoose.connect("mongodb+srv://ba:sLAqxQMpCCjI2Gtf@adinnoutdoors.zpylrw9.mongodb.net/adinnoutdoors")
+mongoose.connect('mongodb+srv://2002karthikatg_db_user:JdNHTlxgja811l3b@cluster0.ovmd8a6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 .then(() => console.log('MongoDB connected successfully'))
 .catch(err => console.error('MongoDB connection error:', err));
 
@@ -203,9 +204,6 @@ app.post('/delete-video', async (req, res) => {
     res.status(500).json({ error: 'Server error during file deletion' });
   }
 });
-
-
-
 
 
 //PRODUCTS    Other routes (get, post, put, delete)
