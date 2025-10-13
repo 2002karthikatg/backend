@@ -22,7 +22,7 @@ app.use("/images", express.static(path.join(__dirname, "../first-app/public/imag
 app.use(express.static('public'));
 // mongoose.connect("mongodb+srv://ba:sLAqxQMpCCjI2Gtf@adinnoutdoors.zpylrw9.mongodb.net/adinnoutdoors")
 // mongoose.connect('mongodb+srv://2002karthikatg_db_user:JdNHTlxgja811l3b@cluster0.ovmd8a6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
-mongoose.connect('mongodb://localhost:27017/Outdoors');
+mongoose.connect('mongodb://localhost:27017/Outdoors')
 .then(() => console.log('MongoDB connected successfully'))
 .catch(err => console.error('MongoDB connection error:', err));
 
