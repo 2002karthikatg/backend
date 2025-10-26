@@ -21,8 +21,13 @@ app.use(bodyParser.json());
 app.use("/images", express.static(path.join(__dirname, "../first-app/public/images")));
 app.use(express.static('public'));
 // mongoose.connect("mongodb+srv://ba:sLAqxQMpCCjI2Gtf@adinnoutdoors.zpylrw9.mongodb.net/adinnoutdoors")
-// mongoose.connect('mongodb+srv://2002karthikatg_db_user:JdNHTlxgja811l3b@cluster0.ovmd8a6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
-mongoose.connect('mongodb://localhost:27017/Outdoors')
+mongoose.connect('mongodb+srv://2002karthikatg_db_user:JdNHTlxgja811l3b@cluster0.ovmd8a6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
+     {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    }
+)
+// mongoose.connect('mongodb://localhost:27017/Outdoors')
 .then(() => console.log('MongoDB connected successfully'))
 .catch(err => console.error('MongoDB connection error:', err));
 
@@ -45,11 +50,20 @@ app.use('/AdminOrder', require("./AdminOrderConfMessage"));
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const { v2: cloudinary } = require('cloudinary');
 
+// cloudinary.config({
+//   cloud_name: 'adinn-outdoors',
+//   api_key: '288959228422799',
+//   api_secret: 'hNd1fd5iPmj20YRxnrRFFAVEtiw',
+//   secure: true // Add this for HTTPS
+// });
+
+
+
 cloudinary.config({
-  cloud_name: 'adinn-outdoors',
-  api_key: '288959228422799',
-  api_secret: 'hNd1fd5iPmj20YRxnrRFFAVEtiw',
-  secure: true // Add this for HTTPS
+    cloud_name: 'dvytzzkwm',
+    api_key: '221277884918431',
+    api_secret: '6bLRVFp_W4YoJPSLHZ5QXDHphVU',
+    secure: true // Add this for HTTPS
 });
 
 
